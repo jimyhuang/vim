@@ -58,8 +58,8 @@ let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
 " fuzzfind
-map <leader>f :FufFile<CR>
-map <leader>F :FufFile **/<CR>
+map <leader>f :FuzzyFinderFile<CR>
+map <leader>F :FuzzyFinderFile **/<CR>
 
 " close bracket
 " Return a corresponding paren to be sent to the buffer
