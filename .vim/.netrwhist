@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/var/www/public_html/tiberias.dblack.info/sites/all/modules/contrib/views_nivo_slider/styles/default'
+let g:netrw_dirhist_2='/var/www/public_html/restatelife.com/sites/all/themes/blossom'
+let g:netrw_dirhist_3='/home/jimmy/.vim'
