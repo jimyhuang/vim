@@ -1,15 +1,33 @@
+"Usage
+" 
+" Coding
+"   ``         -> autocomplete function name
+"   Ctrl+c     -> close bracket
+"   F2         -> Toggle paste mode
+"
+" PHP
+"   Ctrl+o     -> see php document
+"   Ctrl+l     -> verify syntax error in php-cli
+" 
+" Tab
+"   Ctrl+t     -> new tab
+"   `t | `]    -> next tab
+"   `[         -> previous tab
+" 
+" File
+"   F1         -> NerdTree file directory
+"   `f         -> Fuzzysearch
+"   `F         -> Fuzzysearch recursive
+
 filetype plugin on
 let mapleader = "`"
-
-" borrow from http://weierophinney.net/matthew/archives/164-Vim-Productivity-Tips-for-PHP-Developers.html
-autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
-
-" autocomplete
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " syntax highlighting
 " borrow from http://drupal.org/node/29325
 if has("autocmd")
+  " borrow from http://weierophinney.net/matthew/archives/164-Vim-Productivity-Tips-for-PHP-Developers.html
+  autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
+
   " Drupal *.module and *.install files.
   augroup module
     autocmd BufRead,BufNewFile *.module set filetype=php
@@ -28,6 +46,8 @@ syntax on
 
 colorscheme desert
 set hlsearch
+set ignorecase
+set smartcase
 set ruler
 set expandtab
 set tabstop=2
@@ -61,12 +81,6 @@ let NERDTreeDirArrows=1
 map <leader>f :FufFile<CR>
 map <leader>F :FufFile **/<CR>
 
-" http://www.vim.org/scripts/script.php?script_id=1355 include php-doc
-" source ~/.vim/php-doc.vim 
-inoremap <C-p><ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-p> :call PhpDocSingle()<CR> 
-vnoremap <C-p> :call PhpDocRange()<CR> 
-
 " close bracket
 " Return a corresponding paren to be sent to the buffer
 function! CloseParen()
@@ -84,5 +98,10 @@ function! CloseParen()
 endfun
 inoremap <C-c> <C-r>=CloseParen()<CR>
 
-" remap omnifunc
+" omnifunc
 inoremap <leader>` <C-x><C-o>
+" If you prefer the Omni-Completion tip window to close when a selection is
+" made, these lines close it on movement in insert mode or when leaving
+" insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
