@@ -1,24 +1,4 @@
-"Usage
-" 
-" Coding
-"   ``         -> autocomplete function name
-"   Ctrl+c     -> close bracket
-"   F2         -> Toggle paste mode
-"
-" PHP
-"   Ctrl+o     -> see php document
-"   Ctrl+l     -> verify syntax error in php-cli
-" 
-" Tab
-"   Ctrl+t     -> new tab
-"   `t | `]    -> next tab
-"   `[         -> previous tab
-" 
-" File
-"   F1         -> NerdTree file directory
-"   `f         -> Fuzzysearch
-"   `F         -> Fuzzysearch recursive
-
+" you can see document at :help jimmy.txt
 filetype plugin on
 let mapleader = "`"
 
