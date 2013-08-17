@@ -1,5 +1,27 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" original repos on github
+Bundle 'othree/html5.vim'
+Bundle 'othree/html5-syntax.vim'
+Bundle 'othree/eregex.vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'honza/vim-snippets'
+
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+
 filetype plugin on
-let mapleader = "`"
+let mapleader = "\<tab>"
 
 " syntax highlighting
 " borrow from http://drupal.org/node/29325
@@ -24,6 +46,7 @@ endif
 syntax on
 
 colorscheme desert
+set backspace=indent,eol,start
 set hlsearch
 set ignorecase
 set smartcase
@@ -83,3 +106,4 @@ inoremap <leader>` <C-x><C-o>
 " insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
