@@ -1,4 +1,5 @@
 " you can see document at :help jimmy.txt
+set ff=unix
 filetype plugin on
 let mapleader = "`"
 
@@ -35,7 +36,6 @@ set shiftwidth=2
 set autoindent
 set fileencodings=utf8
 set encoding=utf8
-set ff=unix
 set pastetoggle=<F2>
 
 " tab key
