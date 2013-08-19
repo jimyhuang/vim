@@ -1,5 +1,5 @@
-language mes en_US
 if has("win32") || has("win16")
+  language mes en_US
   source $VIMRUNTIME/mswin.vim
   set langmenu=en_US.UTF-8
 endif
