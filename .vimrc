@@ -1,3 +1,9 @@
+language mes en_US
+if has("win32") || has("win16")
+  source $VIMRUNTIME/mswin.vim
+  set langmenu=en_US.UTF-8
+endif
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -8,44 +14,28 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-" original repos on github
+""original repos on github
 Bundle 'othree/html5.vim'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'othree/eregex.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'honza/vim-snippets'
-
-" vim-scripts repos
+Bundle 'othree/vim-autocomplpop'
+Bundle 'kien/ctrlp.vim'
+Bundle 'bling/vim-airline'
+Bundle 'bling/vim-bufferline'
+Bundle 'tpope/vim-fugitive'
+""on vim.org
 Bundle 'L9'
-Bundle 'FuzzyFinder'
+Bundle 'xoria256.vim'
 
-filetype plugin on
+" initialize for common setup
 let mapleader = "\<tab>"
-
-" syntax highlighting
-" borrow from http://drupal.org/node/29325
-if has("autocmd")
-  " borrow from http://weierophinney.net/matthew/archives/164-Vim-Productivity-Tips-for-PHP-Developers.html
-  autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
-
-  " Drupal *.module and *.install files.
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.profile set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-  augroup END
-
-  " auto complete
-  autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-endif
+filetype plugin on
 syntax on
+set t_Co=256
+set background=dark
+colorscheme xoria256
 
-colorscheme desert
 set backspace=indent,eol,start
 set hlsearch
 set ignorecase
@@ -59,8 +49,22 @@ set fileencodings=utf8
 set encoding=utf8
 set pastetoggle=<F2>
 
+" syntax highlighting borrow from http://drupal.org/node/29325
+if has("autocmd")
+  augroup module
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    autocmd BufRead,BufNewFile *.profile set filetype=php
+    autocmd BufRead,BufNewFile *.test set filetype=php
+  augroup END
+
+  autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+endif
+
 " tab key
-" tab navigation like firefox
 nnoremap <C-t> :tabnew<CR>
 nnoremap <leader>[ :tabprevious<CR>
 nnoremap <leader>] :tabnext<CR>
@@ -70,20 +74,7 @@ inoremap <leader>[ <Esc>:tabprevious<CR>i
 inoremap <leader>] <Esc>:tabnext<CR>i
 inoremap <leader>t <Esc>:tabnext<CR>
 
-" nerdtree
-map <F1> :NERDTreeToggle<CR>
-let NERDTreeChDirMode=2
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowBookmarks=1
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
-
-" fuzzfind
-map <leader>f :FufFile<CR>
-map <leader>F :FufFile **/<CR>
-
-" close bracket
-" Return a corresponding paren to be sent to the buffer
+" close bracket, return a corresponding paren to be sent to the buffer
 function! CloseParen()
     let parenpairs = {'(' : ')',
                    \  '[' : ']',
@@ -100,10 +91,19 @@ endfun
 inoremap <C-c> <C-r>=CloseParen()<CR>
 
 " omnifunc
-inoremap <leader>` <C-x><C-o>
 " If you prefer the Omni-Completion tip window to close when a selection is
-" made, these lines close it on movement in insert mode or when leaving
-" insert mode
+" made, these lines close it on movement in insert mode or when leaving insert mode
+inoremap <leader><tab> <C-x><C-o>
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+" airline
+set laststatus=2
+let g:airline_detect_paste=1
+let g:airline_powerline_fonts=0
+let g:airline_left_sep = '»'
+let g:airline_right_sep = '«'
+let g:airline_paste_symbol = '∥'
+let g:airline_whitespace_symbol = 'Ξ'
+let g:airline_enable_branch = 1
+let g:airline_enable_hunks = 1
