@@ -46,6 +46,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'bling/vim-bufferline'
 Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/syntastic'
 ""on vim.org
 Bundle 'L9'
 Bundle 'xoria256.vim'
@@ -136,3 +137,12 @@ let g:airline_enable_hunks = 1
 if match($TERMCAP, 'Co#256:') == 0 || match($TERMCAP, ':Co#256:') > 0           
   set t_Co=256                                                                
 endif 
+
+" Syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_php_checkers=['php', 'phpcs']
+let g:syntastic_phpcs_conf='--standard=Drupal --tab-width=2 --extensions=php,module,inc,install,test,profile,theme'
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_auto_jump=1
+
