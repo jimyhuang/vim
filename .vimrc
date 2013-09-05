@@ -141,7 +141,7 @@ endif
 " Syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_php_checkers=['php', 'phpcs']
-let g:syntastic_phpcs_conf='--standard=Drupal --tab-width=2 --extensions=php,module,inc,install,test,profile,theme'
+let g:syntastic_php_phpcs_args='--tab-width=2 --standard=Drupal --extensions=php,module,inc,install,test,profile,theme'
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_jump=1
