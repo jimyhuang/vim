@@ -47,17 +47,17 @@ Bundle 'bling/vim-airline'
 Bundle 'bling/vim-bufferline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
+Bundle 'noahfrederick/vim-noctu'
+Bundle 'noahfrederick/vim-hemisu'
 ""on vim.org
 Bundle 'L9'
-Bundle 'xoria256.vim'
 
 " initialize for common setup
 let mapleader = "\<tab>"
 filetype plugin on
 syntax on
-set t_Co=256
 set background=dark
-colorscheme xoria256
+colorscheme hemisu
 
 set backspace=indent,eol,start
 set hlsearch
@@ -130,13 +130,6 @@ let g:airline_paste_symbol = '∥'
 let g:airline_whitespace_symbol = 'Ξ'
 let g:airline_enable_branch = 1
 let g:airline_enable_hunks = 1
-
-" Work-around incomplete terminfo databases                                     
-" Particulalry useful when under `screen`, which may or may not be attached to  
-" a physical terminal capable of 256color mode.                                 
-if match($TERMCAP, 'Co#256:') == 0 || match($TERMCAP, ':Co#256:') > 0           
-  set t_Co=256                                                                
-endif 
 
 " Syntastic
 let g:syntastic_check_on_open=1
