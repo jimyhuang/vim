@@ -47,17 +47,16 @@ Bundle 'bling/vim-airline'
 Bundle 'bling/vim-bufferline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
-Bundle 'noahfrederick/vim-noctu'
-Bundle 'noahfrederick/vim-hemisu'
+Bundle 'nanotech/jellybeans.vim'
 ""on vim.org
 Bundle 'L9'
 
 " initialize for common setup
 let mapleader = "\<tab>"
 filetype plugin on
-syntax on
 set background=dark
-colorscheme hemisu
+colorscheme jellybeans
+syntax on
 
 set backspace=indent,eol,start
 set hlsearch
@@ -138,4 +137,3 @@ let g:syntastic_php_checkers=['php']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_jump=1
-
