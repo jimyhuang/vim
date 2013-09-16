@@ -48,8 +48,10 @@ Bundle 'bling/vim-bufferline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'nanotech/jellybeans.vim'
-""on vim.org
+Bundle 'pangloss/vim-javascript'
+""on https://github.com/vim-scripts/
 Bundle 'L9'
+Bundle 'jsbeautify'
 
 " initialize for common setup
 let mapleader = "\<tab>"
