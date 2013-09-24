@@ -11,11 +11,11 @@ filetype off                   " required!
 let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=0
+  echo "Installing Vundle.."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+  let iCanHazVundle=0
 endif
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -23,9 +23,9 @@ Bundle 'gmarik/vundle'
 "Add your bundles here
 "...All your other bundles...
 if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :BundleInstall
+  echo "Installing Bundles, please ignore key map error messages"
+  echo ""
+  :BundleInstall
 endif
 " Setting up Vundle - the vim plugin bundler end
 
@@ -47,6 +47,7 @@ Bundle 'bling/vim-airline'
 Bundle 'bling/vim-bufferline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
+Bundle 'nathanaelkane/vim-indent-guides'
 ""on vim.org
 Bundle 'L9'
 Bundle 'xoria256.vim'
@@ -99,17 +100,17 @@ inoremap <leader>t <Esc>:tabnext<CR>
 
 " close bracket, return a corresponding paren to be sent to the buffer
 function! CloseParen()
-    let parenpairs = {'(' : ')',
-                   \  '[' : ']',
-                   \  '{' : '}'}
+  let parenpairs = {'(' : ')',
+                 \  '[' : ']',
+                 \  '{' : '}'}
 
-    let [m_lnum, m_col] = searchpairpos('[[({]', '', '[\])}]', 'nbW')
+  let [m_lnum, m_col] = searchpairpos('[[({]', '', '[\])}]', 'nbW')
 
-    if (m_lnum != 0) && (m_col != 0)
-        let c = getline(m_lnum)[m_col - 1]
-        return parenpairs[c]
-    endif
-    return ''
+  if (m_lnum != 0) && (m_col != 0)
+    let c = getline(m_lnum)[m_col - 1]
+      return parenpairs[c]
+  endif
+  return ''
 endfun
 inoremap <C-c> <C-r>=CloseParen()<CR>
 
@@ -139,10 +140,16 @@ if match($TERMCAP, 'Co#256:') == 0 || match($TERMCAP, ':Co#256:') > 0
 endif 
 
 " Syntastic
-let g:syntastic_check_on_open=1
-let g:syntastic_php_checkers=['php', 'phpcs']
-let g:syntastic_php_phpcs_args='--tab-width=2 --standard=Drupal --extensions=php,module,inc,install,test,profile,theme'
+let g:syntastic_php_checkers=['php']
+let g:syntastic_php_phpcs_args='--report=csv --standard=Drupal --extensions=php,module,inc,install,test,profile,theme'
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
-let g:syntastic_auto_jump=1
+nnoremap <C-l> :SyntasticCheck<CR>
+"nnoremap <C-e> :Errors<CR>
 
+" fix indent / indent guides
+nnoremap <C-i> gg=G''
+let g:indent_guides_indent_levels = 20
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd ctermbg=darkgrey
+autocmd VimEnter * IndentGuidesEnable
