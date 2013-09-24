@@ -47,18 +47,19 @@ Bundle 'bling/vim-airline'
 Bundle 'bling/vim-bufferline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'pangloss/vim-javascript'
 Bundle 'nathanaelkane/vim-indent-guides'
-""on vim.org
+""on https://github.com/vim-scripts/
 Bundle 'L9'
-Bundle 'xoria256.vim'
+Bundle 'jsbeautify'
 
 " initialize for common setup
 let mapleader = "\<tab>"
 filetype plugin on
-syntax on
-set t_Co=256
 set background=dark
-colorscheme xoria256
+colorscheme jellybeans
+syntax on
 
 set backspace=indent,eol,start
 set hlsearch
@@ -132,20 +133,14 @@ let g:airline_whitespace_symbol = 'Ξ'
 let g:airline_enable_branch = 1
 let g:airline_enable_hunks = 1
 
-" Work-around incomplete terminfo databases                                     
-" Particulalry useful when under `screen`, which may or may not be attached to  
-" a physical terminal capable of 256color mode.                                 
-if match($TERMCAP, 'Co#256:') == 0 || match($TERMCAP, ':Co#256:') > 0           
-  set t_Co=256                                                                
-endif 
-
 " Syntastic
 let g:syntastic_php_checkers=['php']
 let g:syntastic_php_phpcs_args='--report=csv --standard=Drupal --extensions=php,module,inc,install,test,profile,theme'
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+let g:syntastic_auto_jump=1
 nnoremap <C-l> :SyntasticCheck<CR>
-"nnoremap <C-e> :Errors<CR>
+nnoremap <C-e> :Errors<CR>
 
 " fix indent / indent guides
 nnoremap <C-i> gg=G''
