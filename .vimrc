@@ -51,7 +51,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'jiangmiao/auto-pairs'
 ""on https://github.com/vim-scripts/
 Bundle 'L9'
@@ -133,12 +132,8 @@ let g:syntastic_auto_jump=1
 nnoremap <C-l> :SyntasticCheck<CR>
 nnoremap <C-e> :Errors<CR>
 
-" fix indent / indent guides
+" fix indent
 nnoremap <C-i> gg=G''
-let g:indent_guides_indent_levels = 20
-let g:indent_guides_auto_colors = 0
-hi IndentGuidesOdd ctermbg=darkgrey
-autocmd VimEnter * IndentGuidesEnable
 
 " snipmate
 let g:acp_behaviorSnipmateLength = 1
