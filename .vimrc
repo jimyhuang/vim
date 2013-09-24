@@ -40,27 +40,30 @@ Bundle 'gmarik/vundle'
 Bundle 'othree/html5.vim'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'othree/eregex.vim'
-Bundle 'honza/vim-snippets'
 Bundle 'othree/vim-autocomplpop'
+Bundle 'jimyhuang/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
-Bundle 'bling/vim-bufferline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'jiangmiao/auto-pairs'
 ""on https://github.com/vim-scripts/
 Bundle 'L9'
 Bundle 'jsbeautify'
 
 " initialize for common setup
-let mapleader = "\<tab>"
 filetype plugin on
 set background=dark
 colorscheme jellybeans
 syntax on
 
+let mapleader = ','
 set backspace=indent,eol,start
 set hlsearch
 set ignorecase
@@ -94,26 +97,8 @@ nnoremap <C-t> :tabnew<CR>
 nnoremap <leader>[ :tabprevious<CR>
 nnoremap <leader>] :tabnext<CR>
 nnoremap <leader>t :tabnext<CR>
-inoremap <C-t> <Esc>:tabnew<CR>
-inoremap <leader>[ <Esc>:tabprevious<CR>i
-inoremap <leader>] <Esc>:tabnext<CR>i
-inoremap <leader>t <Esc>:tabnext<CR>
-
-" close bracket, return a corresponding paren to be sent to the buffer
-function! CloseParen()
-  let parenpairs = {'(' : ')',
-                 \  '[' : ']',
-                 \  '{' : '}'}
-
-  let [m_lnum, m_col] = searchpairpos('[[({]', '', '[\])}]', 'nbW')
-
-  if (m_lnum != 0) && (m_col != 0)
-    let c = getline(m_lnum)[m_col - 1]
-      return parenpairs[c]
-  endif
-  return ''
-endfun
-inoremap <C-c> <C-r>=CloseParen()<CR>
+nnoremap <leader><tab> :tabnext<CR>
+inoremap <leader><tab> :tabnext<CR>
 
 " omnifunc
 " If you prefer the Omni-Completion tip window to close when a selection is
@@ -121,6 +106,12 @@ inoremap <C-c> <C-r>=CloseParen()<CR>
 inoremap <leader><tab> <C-x><C-o>
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" ctrlp
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_switch_buffer = 'Et'
+nnoremap <F3> :CtrlPBuffer<CR>
+nnoremap <F4> :CtrlP<CR>
 
 " airline
 set laststatus=2
@@ -148,3 +139,6 @@ let g:indent_guides_indent_levels = 20
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd ctermbg=darkgrey
 autocmd VimEnter * IndentGuidesEnable
+
+" snipmate
+let g:acp_behaviorSnipmateLength = 1
