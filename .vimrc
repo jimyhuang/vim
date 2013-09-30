@@ -41,10 +41,10 @@ Bundle 'othree/html5.vim'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'othree/eregex.vim'
 Bundle 'othree/vim-autocomplpop'
-Bundle 'jimyhuang/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
+"Bundle 'jimyhuang/vim-addon-mw-utils'
+"Bundle 'tomtom/tlib_vim'
+"Bundle 'garbas/vim-snipmate'
+"Bundle 'honza/vim-snippets'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
@@ -135,9 +135,6 @@ nnoremap <C-e> :Errors<CR>
 " fix indent
 nnoremap <C-i> gg=G''
 
-" snipmate
-let g:acp_behaviorSnipmateLength = 1
-
 " remove unecessery whitespace when saving
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
