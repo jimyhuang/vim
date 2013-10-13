@@ -33,7 +33,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 ""original repos on github
@@ -41,10 +41,10 @@ Bundle 'othree/html5.vim'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'othree/eregex.vim'
 Bundle 'othree/vim-autocomplpop'
-Bundle 'jimyhuang/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
+"Bundle 'jimyhuang/vim-addon-mw-utils'
+"Bundle 'tomtom/tlib_vim'
+"Bundle 'garbas/vim-snipmate'
+"Bundle 'honza/vim-snippets'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
@@ -135,10 +135,9 @@ let g:syntastic_auto_jump=1
 nnoremap <C-l> :SyntasticCheck<CR>
 nnoremap <C-e> :Errors<CR>
 
-" fix indent / indent guides
+" fix indent
 nnoremap <C-i> gg=G''
-let g:indent_guides_indent_levels = 20
-let g:indent_guides_auto_colors = 0
-hi IndentGuidesOdd ctermbg=darkgrey
-autocmd VimEnter * IndentGuidesEnable
 
+" remove unecessery whitespace when saving
+" http://vim.wikia.com/wiki/Remove_unwanted_spaces
+" autocmd BufWritePre * :%s/\s\+$//e
