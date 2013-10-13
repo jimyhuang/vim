@@ -52,7 +52,9 @@ Bundle 'scrooloose/syntastic'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'jiangmiao/auto-pairs'
+Bundle 'tsaleh/vim-matchit'
+Bundle 'tpope/vim-surround'
+Bundle 'uguu-org/vim-matrix-screensaver'
 ""on https://github.com/vim-scripts/
 Bundle 'L9'
 Bundle 'jsbeautify'
@@ -140,5 +142,3 @@ let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd ctermbg=darkgrey
 autocmd VimEnter * IndentGuidesEnable
 
-" snipmate
-let g:acp_behaviorSnipmateLength = 1
