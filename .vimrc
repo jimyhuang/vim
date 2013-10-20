@@ -55,6 +55,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'tpope/vim-surround'
 Bundle 'uguu-org/vim-matrix-screensaver'
+Bundle 'gkz/vim-ls'
 ""on https://github.com/vim-scripts/
 Bundle 'L9'
 Bundle 'jsbeautify'
