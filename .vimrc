@@ -56,6 +56,7 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'tpope/vim-surround'
 Bundle 'uguu-org/vim-matrix-screensaver'
 Bundle 'gkz/vim-ls'
+Bundle 'digitaltoad/vim-jade'
 ""on https://github.com/vim-scripts/
 Bundle 'L9'
 Bundle 'jsbeautify'
@@ -137,7 +138,7 @@ nnoremap <C-l> :SyntasticCheck<CR>
 nnoremap <C-e> :Errors<CR>
 
 " fix indent
-nnoremap <C-i> gg=G''
+" nnoremap <C-i> gg=G''
 
 " remove unecessery whitespace when saving
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
