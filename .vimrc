@@ -80,6 +80,8 @@ set autoindent
 set fileencodings=utf8
 set encoding=utf8
 set pastetoggle=<F2>
+set noerrorbells
+set novisualbell
 
 " syntax highlighting borrow from http://drupal.org/node/29325
 if has("autocmd")
