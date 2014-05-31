@@ -49,7 +49,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tsaleh/vim-matchit'
@@ -57,6 +56,12 @@ Bundle 'tpope/vim-surround'
 Bundle 'uguu-org/vim-matrix-screensaver'
 Bundle 'gkz/vim-ls'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'mhinz/vim-signify'
+
+""colorscheme
+Bundle 'chriskempson/base16-vim'
+Bundle 'nanotech/jellybeans.vim'
+
 ""on https://github.com/vim-scripts/
 Bundle 'L9'
 Bundle 'jsbeautify'
@@ -64,6 +69,7 @@ Bundle 'jsbeautify'
 " initialize for common setup
 filetype plugin on
 set background=dark
+set t_Co=256
 colorscheme jellybeans
 syntax on
 
@@ -122,13 +128,10 @@ nnoremap <F4> :CtrlP<CR>
 " airline
 set laststatus=2
 let g:airline_detect_paste=1
-let g:airline_powerline_fonts=0
-let g:airline_left_sep = '»'
-let g:airline_right_sep = '«'
-let g:airline_paste_symbol = '∥'
-let g:airline_whitespace_symbol = 'Ξ'
 let g:airline_enable_branch = 1
 let g:airline_enable_hunks = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " Syntastic
 let g:syntastic_php_checkers=['php']
@@ -145,3 +148,5 @@ nnoremap <C-e> :Errors<CR>
 " remove unecessery whitespace when saving
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 " autocmd BufWritePre * :%s/\s\+$//e
+
+
