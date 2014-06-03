@@ -57,6 +57,7 @@ Bundle 'uguu-org/vim-matrix-screensaver'
 Bundle 'gkz/vim-ls'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'mhinz/vim-signify'
+Bundle 'majutsushi/tagbar'
 
 ""colorscheme
 Bundle 'chriskempson/base16-vim'
@@ -88,6 +89,7 @@ set encoding=utf8
 set pastetoggle=<F2>
 set noerrorbells
 set novisualbell
+set ambiwidth=double
 
 " syntax highlighting borrow from http://drupal.org/node/29325
 if has("autocmd")
@@ -128,16 +130,14 @@ nnoremap <F4> :CtrlP<CR>
 " airline
 set laststatus=2
 let g:airline_detect_paste=1
-let g:airline_enable_branch = 1
-let g:airline_enable_hunks = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline_enable_branch=1
+let g:airline_enable_hunks=1
+let g:airline_powerline_fonts=0
+let g:airline_theme='light'
 
 " Syntastic
 let g:syntastic_php_checkers=['php']
 let g:syntastic_php_phpcs_args='--report=csv --standard=Drupal --extensions=php,module,inc,install,test,profile,theme'
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_jump=1
 nnoremap <C-l> :SyntasticCheck<CR>
 nnoremap <C-e> :Errors<CR>
