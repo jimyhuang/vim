@@ -34,4 +34,9 @@ Then start to install another bundle
 :BundleInstall!
 ```
 
+Append this line at the end of .bashrc
+```
+export TERM=xterm-256color
+```
+
 Done!

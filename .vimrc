@@ -41,26 +41,27 @@ Bundle 'othree/html5.vim'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'othree/eregex.vim'
 Bundle 'othree/vim-autocomplpop'
-"Bundle 'jimyhuang/vim-addon-mw-utils'
-"Bundle 'tomtom/tlib_vim'
-"Bundle 'garbas/vim-snipmate'
-"Bundle 'honza/vim-snippets'
+Bundle 'jimyhuang/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'pangloss/vim-javascript'
-Bundle 'nathanaelkane/vim-indent-guides'
+"Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'tpope/vim-surround'
-Bundle 'uguu-org/vim-matrix-screensaver'
+"Bundle 'uguu-org/vim-matrix-screensaver'
 Bundle 'gkz/vim-ls'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'mhinz/vim-signify'
 Bundle 'majutsushi/tagbar'
+" Bundle 'ervandew/supertab'
 
 ""colorscheme
-Bundle 'chriskempson/base16-vim'
+" Bundle 'chriskempson/base16-vim'
 Bundle 'nanotech/jellybeans.vim'
 
 ""on https://github.com/vim-scripts/
@@ -90,6 +91,8 @@ set pastetoggle=<F2>
 set noerrorbells
 set novisualbell
 set ambiwidth=double
+set wildmode=longest,list,full
+set wildmenu
 
 " syntax highlighting borrow from http://drupal.org/node/29325
 if has("autocmd")
@@ -149,5 +152,4 @@ nnoremap <C-e> :Errors<CR>
 " remove unecessery whitespace when saving
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 " autocmd BufWritePre * :%s/\s\+$//e
-
 
