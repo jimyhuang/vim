@@ -59,6 +59,8 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'mhinz/vim-signify'
 Bundle 'majutsushi/tagbar'
 " Bundle 'ervandew/supertab'
+Bundle 'fatih/vim-go'
+Bundle 'vim-scripts/taglist.vim'
 
 ""colorscheme
 " Bundle 'chriskempson/base16-vim'
@@ -129,6 +131,7 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'Et'
 nnoremap <F3> :CtrlPBuffer<CR>
 nnoremap <F4> :CtrlP<CR>
+nnoremap <F12> :TlistToggle<CR>
 
 " airline
 set laststatus=2
@@ -149,7 +152,7 @@ nnoremap <C-e> :Errors<CR>
 " fix indent
 " nnoremap <C-i> gg=G''
 
-" remove unecessery whitespace when saving
+" remove unecessery whitespace at the end
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
-" autocmd BufWritePre * :%s/\s\+$//e
+nnoremap <C-k>  :%s/\s\+$//e<CR>
 
