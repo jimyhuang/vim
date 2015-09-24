@@ -57,7 +57,7 @@ Bundle 'tpope/vim-surround'
 "Bundle 'uguu-org/vim-matrix-screensaver'
 Bundle 'gkz/vim-ls'
 Bundle 'digitaltoad/vim-jade'
-Bundle 'mhinz/vim-signify'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'majutsushi/tagbar'
 " Bundle 'ervandew/supertab'
 Bundle 'fatih/vim-go'
@@ -132,7 +132,10 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'Et'
 nnoremap <F3> :CtrlPBuffer<CR>
 nnoremap <F4> :CtrlP<CR>
+nnoremap <F5> :GitGutterToggle<CR>
 nnoremap <F12> :TlistToggle<CR>
+nmap <Leader>; <Plug>GitGutterNextHunk
+nmap <Leader>' <Plug>GitGutterPrevHunk
 
 " airline
 set laststatus=2
