@@ -39,4 +39,8 @@ Append this line at the end of .bashrc
 export TERM=xterm-256color
 ```
 
+Install ctags
+```
+apt-get install exuberant-ctags
+```
 Done!
