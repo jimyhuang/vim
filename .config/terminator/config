@@ -1,0 +1,32 @@
+[global_config]
+  enabled_plugins = ,
+  always_split_with_profile = True
+[keybindings]
+  next_tab = <Primary>Up
+  prev_tab = <Primary>Down
+[profiles]
+  [[default]]
+    palette = "#20384c:#e85555:#7ec63a:#ffdf4c:#3d81d9:#c371d0:#2a9ac1:#f4f5e7:#53566f:#f58181:#8ae234:#fdf3a4:#729fcf:#ad7fa8:#34e2e2:#ffffff"
+    copy_on_selection = True
+    background_image = None
+    background_darkness = 0.83
+    scrollback_lines = 2048
+    background_type = transparent
+    use_system_font = False
+    cursor_color = "#1094ff"
+    foreground_color = "#f7f7f7"
+    scroll_on_output = False
+    icon_bell = False
+    show_titlebar = False
+    font = Droid Sans Mono 14
+    background_color = "#0a0019"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
