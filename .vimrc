@@ -136,6 +136,7 @@ nnoremap <F5> :GitGutterToggle<CR>
 nnoremap <F12> :TlistToggle<CR>
 nmap <Leader>; <Plug>GitGutterNextHunk
 nmap <Leader>' <Plug>GitGutterPrevHunk
+nnoremap <C-a> :Gstatus<CR>
 
 " airline
 set laststatus=2
@@ -160,3 +161,6 @@ nnoremap <C-e> :Errors<CR>
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 nnoremap <C-k>  :%s/\s\+$//e<CR>
 
+" remove background from colorscheme
+hi Normal ctermbg=none
+hi NonText ctermbg=none
