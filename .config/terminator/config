@@ -6,7 +6,7 @@
   prev_tab = <Primary>Down
 [profiles]
   [[default]]
-    palette = "#20384c:#e85555:#91b86c:#eed24f:#86aad8:#bb99c7:#6ba1b3:#eeeeee:#53566f:#ffb6b6:#c1ff84:#f3ebae:#b4cee9:#dfa8c9:#9fdfdf:#ffffff"
+    palette = "#20384c:#e85555:#91b86c:#eed24f:#3b85e2:#bb99c7:#99c5d4:#eeeeee:#53566f:#ffb6b6:#c1ff84:#f3ebae:#87c2ff:#dfa8c9:#9fdfdf:#ffffff"
     copy_on_selection = True
     background_image = None
     background_darkness = 0.83
