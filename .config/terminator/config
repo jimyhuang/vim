@@ -2,8 +2,8 @@
   enabled_plugins = ,
   always_split_with_profile = True
 [keybindings]
-  next_tab = <Primary>Up
-  prev_tab = <Primary>Down
+  next_tab = <Primary>Right
+  prev_tab = <Primary>Left
 [profiles]
   [[default]]
     palette = "#20384c:#e85555:#91b86c:#eed24f:#3b85e2:#bb99c7:#99c5d4:#eeeeee:#53566f:#ffb6b6:#c1ff84:#f3ebae:#87c2ff:#dfa8c9:#9fdfdf:#ffffff"
