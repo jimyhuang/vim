@@ -62,6 +62,7 @@ Bundle 'majutsushi/tagbar'
 " Bundle 'ervandew/supertab'
 Bundle 'fatih/vim-go'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'chrisbra/csv.vim'
 
 ""colorscheme
 " Bundle 'chriskempson/base16-vim'
@@ -134,8 +135,8 @@ nnoremap <F3> :CtrlPBuffer<CR>
 nnoremap <F4> :CtrlP<CR>
 nnoremap <F5> :GitGutterToggle<CR>
 nnoremap <F12> :TlistToggle<CR>
-nmap <Leader>; <Plug>GitGutterNextHunk
-nmap <Leader>' <Plug>GitGutterPrevHunk
+nmap <Leader>; <Plug>GitGutterPrevHunk
+nmap <Leader>' <Plug>GitGutterNextHunk
 nnoremap <C-a> :Gstatus<CR>
 
 " airline
