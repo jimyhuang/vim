@@ -62,15 +62,17 @@ Bundle 'majutsushi/tagbar'
 " Bundle 'ervandew/supertab'
 Bundle 'fatih/vim-go'
 Bundle 'vim-scripts/taglist.vim'
-Bundle 'chrisbra/csv.vim'
+" Bundle 'chrisbra/csv.vim'
 
 ""colorscheme
 " Bundle 'chriskempson/base16-vim'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'inside/vim-grep-operator'
 
 ""on https://github.com/vim-scripts/
 Bundle 'L9'
 Bundle 'jsbeautify'
+
 
 " initialize for common setup
 filetype plugin on
@@ -137,7 +139,7 @@ nnoremap <F5> :GitGutterToggle<CR>
 nnoremap <F12> :TlistToggle<CR>
 nmap <Leader>; <Plug>GitGutterPrevHunk
 nmap <Leader>' <Plug>GitGutterNextHunk
-nnoremap <C-a> :Gstatus<CR>
+nnoremap <C-a> :Gstatus<cr><c-w>T<CR>
 
 " airline
 set laststatus=2
@@ -165,3 +167,12 @@ nnoremap <C-k>  :%s/\s\+$//e<CR>
 " remove background from colorscheme
 hi Normal ctermbg=none
 hi NonText ctermbg=none
+
+" quick grep
+set grepprg=git\ grep\ -n\ $*
+nmap <C-_> <Plug>GrepOperatorOnCurrentDirectory
+vmap <C-_> <Plug>GrepOperatorOnCurrentDirectory
+nmap <C-_>/ <Plug>GrepOperatorWithFilenamePrompt
+vmap <C-_>/ <Plug>GrepOperatorWithFilenamePrompt
+let g:grep_operator_set_search_register = 1
+
