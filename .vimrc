@@ -144,11 +144,19 @@ nnoremap <C-a> :Gstatus<cr><c-w>T<CR>
 " airline
 set laststatus=2
 let g:airline_detect_paste=1
-let g:airline_enable_branch=1
-let g:airline_enable_hunks=1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts=1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
 let g:airline_theme='light'
+let g:airline_exclude_preview = 0
+let g:airline_left_sep = '»'
+let g:airline_right_sep = '«'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = '#'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.whitespace = 'Ξ'
 
 " Syntastic
 let g:syntastic_php_checkers=['php']

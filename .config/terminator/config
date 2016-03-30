@@ -1,22 +1,28 @@
 [global_config]
-  enabled_plugins = ,
+  window_state = maximise
+  enabled_plugins = InactivityWatch,
   always_split_with_profile = True
+  suppress_multiple_term_dialog = True
+  title_receive_fg_color = "#f0ffa0"
+  inactive_color_offset = 1.0
+  title_inactive_bg_color = "#5a4c53"
 [keybindings]
   next_tab = <Primary><Shift>Right
+  zoom_in = <Primary>equal
   prev_tab = <Primary><Shift>Left
 [profiles]
   [[default]]
+    word_chars = -A-Za-z0-9_
     palette = "#20384c:#e85555:#91b86c:#eed24f:#3b85e2:#bb99c7:#99c5d4:#eeeeee:#53566f:#ffb6b6:#c1ff84:#f3ebae:#87c2ff:#dfa8c9:#9fdfdf:#ffffff"
     copy_on_selection = True
     background_image = None
-    background_darkness = 0.91
+    background_darkness = 0.84
     scrollback_lines = 2048
     background_type = transparent
     use_system_font = False
     cursor_color = "#1094ff"
     foreground_color = "#f7f7f7"
     scroll_on_output = False
-    icon_bell = False
     show_titlebar = False
     font = Droid Sans Mono 13
     background_color = "#0a0019"
