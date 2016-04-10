@@ -163,7 +163,6 @@ let g:syntastic_php_checkers=['php']
 let g:syntastic_php_phpcs_args='--report=csv --standard=Drupal --extensions=php,module,inc,install,test,profile,theme'
 let g:syntastic_auto_jump=1
 nnoremap <C-l> :SyntasticCheck<CR>
-nnoremap <C-e> :Errors<CR>
 
 " fix indent
 " nnoremap <C-i> gg=G''
@@ -177,10 +176,7 @@ hi Normal ctermbg=none
 hi NonText ctermbg=none
 
 " quick grep
+nmap <C-e> :grep "" *<left><left><left>
 set grepprg=git\ grep\ -n\ $*
-nmap <C-_> <Plug>GrepOperatorOnCurrentDirectory
-vmap <C-_> <Plug>GrepOperatorOnCurrentDirectory
-nmap <C-_>/ <Plug>GrepOperatorWithFilenamePrompt
-vmap <C-_>/ <Plug>GrepOperatorWithFilenamePrompt
-let g:grep_operator_set_search_register = 1
+vmap <C-w> <Plug>GrepOperatorOnCurrentDirectory
 
