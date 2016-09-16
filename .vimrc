@@ -41,11 +41,13 @@ Bundle 'gmarik/vundle'
 Bundle 'othree/html5.vim'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'othree/eregex.vim'
-Bundle 'othree/vim-autocomplpop'
+"Bundle 'othree/vim-autocomplpop'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'jimyhuang/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
@@ -61,6 +63,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'majutsushi/tagbar'
 " Bundle 'ervandew/supertab'
 Bundle 'fatih/vim-go'
+Bundle 'nsf/gocode'
 Bundle 'vim-scripts/taglist.vim'
 " Bundle 'chrisbra/csv.vim'
 
@@ -126,7 +129,7 @@ inoremap <leader><tab> :tabnext<CR>
 " omnifunc
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving insert mode
-inoremap <leader><tab> <C-x><C-o>
+inoremap <tab><tab> <C-x><tab>
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
@@ -136,7 +139,7 @@ let g:ctrlp_switch_buffer = 'Et'
 nnoremap <F3> :CtrlPBuffer<CR>
 nnoremap <F4> :CtrlP<CR>
 nnoremap <F5> :GitGutterToggle<CR>
-nnoremap <F12> :TlistToggle<CR>
+nnoremap <F12> :TagbarToggle<CR>
 nmap <Leader>; <Plug>GitGutterPrevHunk
 nmap <Leader>' <Plug>GitGutterNextHunk
 nnoremap <C-a> :Gstatus<cr><c-w>T<CR>
@@ -179,4 +182,21 @@ hi NonText ctermbg=none
 nmap <C-e> :grep "" *<left><left><left>
 set grepprg=git\ grep\ -n\ $*
 vmap <C-w> <Plug>GrepOperatorOnCurrentDirectory
+
+" go specific
+au FileType go nmap <Leader>gs <Plug>(go-implements)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <leader>gr <Plug>(go-run)
+au FileType go nmap <leader>gb <Plug>(go-build)
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+
+" ycm
+let g:ycm_key_invoke_completion = '<C-b>'
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
