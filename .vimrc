@@ -48,8 +48,9 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
-Bundle 'kien/ctrlp.vim'
-Bundle 'bling/vim-airline'
+Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'pangloss/vim-javascript'
@@ -130,12 +131,25 @@ inoremap <leader><tab> :tabnext<CR>
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving insert mode
 inoremap <tab><tab> <C-x><tab>
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " ctrlp
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_regexp = 1
+" ctrlp - replace underscore match with directory separator(CRM specific)
+let g:ctrlp_abbrev = {
+ \ 'gmode': 'i',
+ \ 'abbrevs': [
+ \  {
+ \    'pattern': '_',
+ \    'expanded': '/',
+ \    'mode': 'prz',
+ \  }
+ \ ]
+\ }
+
 nnoremap <F3> :CtrlPBuffer<CR>
 nnoremap <F4> :CtrlP<CR>
 nnoremap <F5> :GitGutterToggle<CR>
@@ -197,6 +211,5 @@ let g:go_highlight_build_constraints = 1
 
 
 " ycm
-let g:ycm_key_invoke_completion = '<C-b>'
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_key_invoke_completion = '<C-f>'
 

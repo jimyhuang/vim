@@ -22,6 +22,7 @@
     use_system_font = False
     cursor_color = "#517593"
     foreground_color = "#f7f7f7"
+    login_shell = True
     scroll_on_output = False
     show_titlebar = False
     font = Droid Sans Mono 13
