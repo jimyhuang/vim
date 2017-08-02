@@ -137,7 +137,8 @@ inoremap <tab><tab> <C-x><tab>
 " ctrlp
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'Et'
-let g:ctrlp_regexp = 1
+let g:ctrlp_match_window = 'min:4,max:28'
+let g:ctrlp_regexp = 0
 " ctrlp - replace underscore match with directory separator(CRM specific)
 let g:ctrlp_abbrev = {
  \ 'gmode': 'i',
@@ -151,7 +152,7 @@ let g:ctrlp_abbrev = {
 \ }
 
 nnoremap <F3> :CtrlPBuffer<CR>
-nnoremap <F4> :CtrlP<CR>
+map <F4> <C-P><C-\>w
 nnoremap <F5> :GitGutterToggle<CR>
 nnoremap <F12> :TagbarToggle<CR>
 nmap <Leader>; <Plug>GitGutterPrevHunk
@@ -178,6 +179,8 @@ let g:airline_symbols.whitespace = 'Ξ'
 " Syntastic
 let g:syntastic_php_checkers=['php']
 let g:syntastic_php_phpcs_args='--report=csv --standard=Drupal --extensions=php,module,inc,install,test,profile,theme'
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:syntastic_auto_jump=1
 nnoremap <C-l> :SyntasticCheck<CR>
 
@@ -193,9 +196,12 @@ hi Normal ctermbg=none
 hi NonText ctermbg=none
 
 " quick grep
-nmap <C-e> :grep "" *<left><left><left>
+" nmap <C-e> :grep "<cword>" *<left><left><left>
 set grepprg=git\ grep\ -n\ $*
-vmap <C-w> <Plug>GrepOperatorOnCurrentDirectory
+nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
+vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
+nmap <C-e> <Leader>giw
+vmap <C-w> <Leader>g
 
 " go specific
 au FileType go nmap <Leader>gs <Plug>(go-implements)
