@@ -41,8 +41,13 @@ Bundle 'gmarik/vundle'
 Bundle 'othree/html5.vim'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'othree/eregex.vim'
+<<<<<<< HEAD
 "Bundle 'othree/vim-autocomplpop'
 "Bundle 'Valloric/YouCompleteMe'
+=======
+Bundle 'othree/vim-autocomplpop'
+Bundle 'Valloric/YouCompleteMe'
+>>>>>>> 35fbbcef97a5dc4f9e66929c62d230d4f5760e95
 Bundle 'jimyhuang/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
@@ -159,11 +164,16 @@ nmap <Leader>; <Plug>GitGutterPrevHunk
 nmap <Leader>' <Plug>GitGutterNextHunk
 nnoremap <C-a> :Gstatus<cr><c-w>T<CR>
 
+" gitgutter
+let g:gitgutter_enabled = 0
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
 " airline
 set laststatus=2
 let g:airline_detect_paste=1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#enabled = 0
 let g:airline#extensions#hunks#enabled = 1
 let g:airline_theme='light'
 let g:airline_exclude_preview = 0
@@ -201,7 +211,7 @@ set grepprg=git\ grep\ -n\ $*
 nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 nmap <C-e> <Leader>giw
-vmap <C-w> <Leader>g
+vmap <C-v> <Leader>g
 
 " go specific
 au FileType go nmap <Leader>gs <Plug>(go-implements)
@@ -218,3 +228,7 @@ let g:go_highlight_build_constraints = 1
 
 " ycm
 let g:ycm_key_invoke_completion = '<C-f>'
+"let g:loaded_youcompleteme = 1
+
+" swp file location
+set directory=$HOME/.vim
