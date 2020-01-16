@@ -1,10 +1,3 @@
-if has("win32") || has("win16")
-  language mes en_US
-  source $VIMRUNTIME/mswin.vim
-  set langmenu=en_US.UTF-8
-  let Tlist_Ctags_Cmd = 'C:\ctags.exe'
-endif
-
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -41,13 +34,8 @@ Bundle 'gmarik/vundle'
 Bundle 'othree/html5.vim'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'othree/eregex.vim'
-<<<<<<< HEAD
 "Bundle 'othree/vim-autocomplpop'
 "Bundle 'Valloric/YouCompleteMe'
-=======
-Bundle 'othree/vim-autocomplpop'
-Bundle 'Valloric/YouCompleteMe'
->>>>>>> 35fbbcef97a5dc4f9e66929c62d230d4f5760e95
 Bundle 'jimyhuang/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
@@ -66,7 +54,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'gkz/vim-ls'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'majutsushi/tagbar'
+"Bundle 'majutsushi/tagbar'
 " Bundle 'ervandew/supertab'
 "Bundle 'fatih/vim-go'
 Bundle 'nsf/gocode'
@@ -159,7 +147,7 @@ let g:ctrlp_abbrev = {
 nnoremap <F3> :CtrlPBuffer<CR>
 map <F4> <C-P><C-\>w
 nnoremap <F5> :GitGutterToggle<CR>
-nnoremap <F12> :TagbarToggle<CR>
+"nnoremap <F12> :TagbarToggle<CR>
 nmap <Leader>; <Plug>GitGutterPrevHunk
 nmap <Leader>' <Plug>GitGutterNextHunk
 nnoremap <C-a> :Gstatus<cr><c-w>T<CR>
