@@ -1,0 +1,64 @@
+{
+    "window.zoomLevel": 1,
+    "editor.fontSize": 12,
+    "debug.console.fontSize": 12,
+    "terminal.integrated.fontSize": 12,
+    "files.associations": {
+        "*.module": "php",
+        "*.inc": "php",
+        "*.tpl": "php"
+    },
+    "terminal.integrated.rendererType": "dom",
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.colorTheme": "One Dark Pro",
+    "search.smartCase": true,
+    "vim.visualstar": true,
+    "window.menuBarVisibility": "default",
+    "editor.tabSize": 2,
+    "workbench.tree.indent": 4,
+    "html.format.indentInnerHtml": true,
+    "gitlens.views.repositories.location": "scm",
+    "gitlens.views.fileHistory.location": "scm",
+    "gitlens.views.lineHistory.location": "scm",
+    "gitlens.views.search.location": "scm",
+    "gitlens.views.compare.location": "scm",
+    "gitlens.defaultDateStyle": "absolute",
+    "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm:ss",
+    "gitlens.defaultDateShortFormat": "YY-MM-DD",
+    "window.restoreWindows": "none",
+    "vim.leader": ",",
+    "gitlens.views.repositories.files.layout": "tree",
+    "gitlens.views.repositories.files.compact": false,
+    "gitlens.views.repositories.avatars": false,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before":["leader", "'"],
+            "commands": [
+                "editor.action.dirtydiff.next"
+            ]
+        },
+        {
+            "before": ["leader", ";"],
+            "commands": [
+                "editor.action.dirtydiff.previous"
+            ]
+        }
+    ],
+    "vim.handleKeys": {
+      "<C-c>": false,
+      "<C-v>": false,
+    },
+    "editor.gotoLocation.multiple": "gotoAndPeek",
+    "editor.stablePeek": true,
+    "php.memoryLimit": "1024M",
+    "git.confirmSync": false,
+    "terminal.integrated.copyOnSelection": true,
+    "copyOnSelect.copyOnKeyboardSelection": true,
+    "copyOnSelect.trimStart": true,
+    "vim.useSystemClipboard": true,
+    "editor.fontFamily": "\"WenQuanYi Micro Hei Mono\"",
+    "remote.SSH.configFile": "/home/jimmy/.ssh/config.d/0_local"
+}
