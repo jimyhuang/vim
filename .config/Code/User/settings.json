@@ -47,10 +47,7 @@
             ]
         }
     ],
-    "vim.handleKeys": {
-      "<C-c>": false,
-      "<C-v>": false,
-    },
+    "vim.useCtrlKeys" : false,
     "editor.gotoLocation.multiple": "gotoAndPeek",
     "editor.stablePeek": true,
     "php.memoryLimit": "1024M",
