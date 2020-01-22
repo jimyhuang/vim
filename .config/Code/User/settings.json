@@ -47,7 +47,6 @@
             ]
         }
     ],
-    "vim.useCtrlKeys" : false,
     "editor.gotoLocation.multiple": "gotoAndPeek",
     "editor.stablePeek": true,
     "php.memoryLimit": "1024M",
