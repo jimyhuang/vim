@@ -1,4 +1,3 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
     {
         "key": "ctrl+shift+'",
@@ -30,7 +29,7 @@
         "command": "-workbench.action.quit"
     },
     {
-        "key": "ctrl+shift+space",
+        "key": "ctrl+shift+l",
         "command": "editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
     },
@@ -40,17 +39,7 @@
         "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+shift+space",
-        "command": "toggleSuggestionFocus",
-        "when": "suggestWidgetVisible && textInputFocus"
-    },
-    {
-        "key": "ctrl+alt+space",
-        "command": "-toggleSuggestionFocus",
-        "when": "suggestWidgetVisible && textInputFocus"
-    },
-    {
-        "key": "ctrl+shift+space",
+        "key": "ctrl+shift+l",
         "command": "toggleSuggestionDetails",
         "when": "suggestWidgetVisible && textInputFocus"
     },
@@ -60,12 +49,21 @@
         "when": "suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "shift+enter",
-        "command": "gitlens.views.openFile"
+        "key": "f11",
+        "command": "-workbench.action.toggleFullScreen"
     },
     {
-        "key": "f6",
-        "command": "gitlens.openChangedFiles",
-        "when": "gitlens:enabled"
+        "key": "f11",
+        "command": "editor.action.peekDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+shift+f10",
+        "command": "-editor.action.peekDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+shift+=",
+        "command": "-workbench.action.zoomIn"
     }
 ]

@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "editor.fontSize": 12,
     "debug.console.fontSize": 12,
     "terminal.integrated.fontSize": 12,
@@ -20,19 +20,8 @@
     "editor.tabSize": 2,
     "workbench.tree.indent": 4,
     "html.format.indentInnerHtml": true,
-    "gitlens.views.repositories.location": "scm",
-    "gitlens.views.fileHistory.location": "scm",
-    "gitlens.views.lineHistory.location": "scm",
-    "gitlens.views.search.location": "scm",
-    "gitlens.views.compare.location": "scm",
-    "gitlens.defaultDateStyle": "absolute",
-    "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm:ss",
-    "gitlens.defaultDateShortFormat": "YY-MM-DD",
     "window.restoreWindows": "none",
     "vim.leader": ",",
-    "gitlens.views.repositories.files.layout": "tree",
-    "gitlens.views.repositories.files.compact": false,
-    "gitlens.views.repositories.avatars": false,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before":["leader", "'"],
@@ -47,14 +36,21 @@
             ]
         }
     ],
-    "editor.gotoLocation.multiple": "gotoAndPeek",
-    "editor.stablePeek": true,
+    "vim.handleKeys": {
+        "<C-b>": false, 
+        "<C-c>": false, 
+        "<C-v>": false
+    },
+    "vim.mouseSelectionGoesIntoVisualMode": false,
     "php.memoryLimit": "1024M",
+    "go.formatOnSave": true,
     "git.confirmSync": false,
     "terminal.integrated.copyOnSelection": true,
     "copyOnSelect.copyOnKeyboardSelection": true,
     "copyOnSelect.trimStart": true,
     "vim.useSystemClipboard": true,
     "editor.fontFamily": "\"WenQuanYi Micro Hei Mono\"",
-    "remote.SSH.configFile": "/home/jimmy/.ssh/config.d/0_local"
+    "remote.SSH.configFile": "/home/jimmy/.ssh/config.d/0_local",
+    "editor.peekWidgetDefaultFocus": "editor",
+    "editor.stablePeek": true
 }
