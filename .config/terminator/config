@@ -1,29 +1,65 @@
 [global_config]
-  borderless = True
-  scroll_tabbar = True
-  window_state = maximise
+  title_hide_sizetext = True
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
 [keybindings]
+  resize_left = <Primary><Shift><Alt>Left
+  resize_right = <Primary><Shift><Alt>Right
   next_tab = <Primary><Shift>Right
   prev_tab = <Primary><Shift>Left
-[layouts]
-  [[default]]
-    [[[child1]]]
-      parent = window0
-      type = Terminal
-    [[[window0]]]
-      parent = ""
-      type = Window
-[plugins]
 [profiles]
   [[default]]
-    background_color = "#140101"
+    visible_bell = True
+    icon_bell = False
     background_darkness = 0.9
     background_type = transparent
-    copy_on_selection = True
     cursor_color = "#aaaaaa"
-    font = 文泉驛等寬微米黑 13
-    foreground_color = "#d3d7cf"
-    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    foreground_color = "#eeeeec"
     show_titlebar = False
-    use_system_font = False
+    scrollback_lines = 10000
+    palette = "#073642:#d30102:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    copy_on_selection = True
+  [[Violet Dark]]
     visible_bell = True
+    icon_bell = False
+    background_color = "#1c1d1f"
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#708284"
+    foreground_color = "#708284"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#56595c:#c94c22:#85981c:#b4881d:#2e8bce:#d13a82:#32a198:#c9c6bd:#45484b:#bd3613:#738a04:#a57705:#2176c7:#c61c6f:#259286:#c9c6bd"
+    copy_on_selection = True
+  [[After Dark]]
+    visible_bell = True
+    icon_bell = False
+    background_color = "#10111b"
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#eeeeec"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#2e3436:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#d3d7cf:#555753:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#eeeeec"
+    copy_on_selection = True
+  [[Dracula]]
+    visible_bell = True
+    icon_bell = False
+    background_color = "#1e1f29"
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#f8f8f2"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#44475a:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#94a3a5:#000000:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#ffffff"
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
